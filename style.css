@@ -26,10 +26,6 @@
     cursor: pointer;
   }
    
-  input {
-    -webkit-appearance: none;
-  }
-   
   button,
   input {
     border: none;

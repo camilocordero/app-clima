@@ -1,3 +1,4 @@
+function init() {
 /*SEARCH BY USING A CITY NAME (e.g. athens) OR A COMMA-SEPARATED CITY NAME ALONG WITH THE COUNTRY CODE (e.g. athens,gr)*/
 const form = document.querySelector(".top-banner form");
 const input = document.querySelector(".top-banner input");
@@ -36,9 +37,9 @@ form.addEventListener("submit", e => {
     });
 
     if (filteredArray.length > 0) {
-      msg.textContent = `You already know the weather for ${
+      msg.textContent = `Ciudad ya desplegada,"${
         filteredArray[0].querySelector(".city-name span").textContent
-      } ...otherwise be more specific by providing the country code as well 😉`;
+      }"`;
       form.reset();
       input.focus();
       return;
@@ -75,10 +76,15 @@ form.addEventListener("submit", e => {
       list.appendChild(li);
     })
     .catch(() => {
-      msg.textContent = "Please search for a valid city 😩";
+      msg.textContent = "porfavor ingresa una ciudad valida 😩";
     });
 
   msg.textContent = "";
   form.reset();
   input.focus();
+});
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // Aquí se llama a la función init()
+  init();
 });
